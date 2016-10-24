@@ -1,0 +1,26 @@
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+ext{
+    SPRING_VERSION='4.3.3.RELEASE'
+}
+
+repositories {
+    maven {
+        url "http://nexus.delivery.realestate.com.au/nexus/content/repositories/releases/"
+    }
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile "org.springframework:spring-core:${SPRING_VERSION}"
+    compile "org.springframework:spring-context:${SPRING_VERSION}"
+    compile "org.springframework:spring-webmvc:${SPRING_VERSION}"
+    compile "javax.servlet:javax.servlet-api:3.0.1"
+
+    testCompile 'junit:junit:4.12'
+}
+
